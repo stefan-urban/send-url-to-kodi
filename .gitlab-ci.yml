@@ -1,10 +1,5 @@
-before_script:
-  - apt-get update -qq
 
-rspec:
+buildandtest:
   script:
-    - bundle exec rspec
-
-rubocop:
-  script:
-    - bundle exec rubocop
+    - dotnet restore
+    - dotnet build
