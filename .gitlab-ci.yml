@@ -1,0 +1,10 @@
+before_script:
+  - apt-get update -qq
+
+rspec:
+  script:
+    - bundle exec rspec
+
+rubocop:
+  script:
+    - bundle exec rubocop
