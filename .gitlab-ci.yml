@@ -1,5 +1,17 @@
 
-buildandtest:
+debug:
   script:
     - dotnet restore
-    - dotnet build
+    - dotnet build -b build/Debug/ -o bin/Debug/ -f netcoreapp1.0
+  artifacts:
+    untracked: true
+    paths:
+      - bin/Debug/
+
+release:
+  script:
+    - dotnet restore
+    - dotnet publish -b build/Release/ -o bin/Release/ -f netcoreapp1.0
+  artifacts:
+    paths:
+      - bin/Release/
